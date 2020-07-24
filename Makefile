@@ -7,5 +7,7 @@ all:
 	index="`cat feitaemcasa.html`" perl -i'' -pe 's/FEITAEMCASAFILE/$$ENV{"index"}/g' index-loaded.js
 	index="`cat deep.html`" perl -i'' -pe 's/DEEPFILE/$$ENV{"index"}/g' index-loaded.js
 	index="`cat asciichartr.html`" perl -i'' -pe 's/ASCIICHARTRFILE/$$ENV{"index"}/g' index-loaded.js
+	index="`cat robots.txt`" perl -i'' -pe 's/ROBOTSFILE/$$ENV{"index"}/g' index-loaded.js
+	index="`cat sitemap.xml`" perl -i'' -pe 's/SITEMAPFILE/$$ENV{"index"}/g' index-loaded.js
 	sed -i '' 's/\\/\\\\/g' index-loaded.js 
 

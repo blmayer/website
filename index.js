@@ -1,9 +1,32 @@
 const pages = {
-	"feitaemcasa.html": `FEITAEMCASAFILE`,
-	"deep.html": `DEEPFILE`,
-	"asciichartr.html": `ASCIICHARTRFILE`,
-	"404.html": `404FILE`,
-	"index.html": `INDEXFILE`
+	"feitaemcasa.html": {
+		"content": `FEITAEMCASAFILE`,
+		"mime": "text/html"
+	},
+	"deep.html": {
+		"content": `DEEPFILE`,
+		"mime": "text/html"
+	},
+	"asciichartr.html": {
+		"content": `ASCIICHARTRFILE`,
+		"mime": "text/html"
+	},
+	"404.html": {
+		"content": `404FILE`,
+		"mime": "text/html"
+	},
+	"index.html": {
+		"content": `INDEXFILE`,
+		"mime": "text/html"
+	},
+	"robots.txt": {
+		"content": `ROBOTSFILE`,
+		"mime": "text/plain"
+	},
+	"sitemap.xml": {
+		"content": `SITEMAPFILE`,
+		"mime": "application/xml"
+	}
 };
 
 addEventListener('fetch', event => {
@@ -18,13 +41,13 @@ async function handleRequest(request) {
 		path = path[1];
 	}
 
-	let content = pages[path];
-	if (!content) {
-		content = pages['404.html'];
+	let page = pages[path];
+	if (!page) {
+		page = pages['404.html'];
 	}
 	
-	let res = new Response(content);
-	res.headers.set("Content-Type", "text/html");
+	let res = new Response(page["content"]);
+	res.headers.set("Content-Type", page["mime"]);
 
 	return res
 }
