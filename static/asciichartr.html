@@ -1,90 +1,92 @@
 <!DOCTYPE html PUBLIC>
-<meta charset="utf-8">
-<meta language="english">
-<meta name="description" content="blmayer.dev is my website, here I will share some of my projects and CV.">
-<meta name="keywords" content="developer, CV, programmer, brian">
+<meta charset="utf-8" />
+<meta language="english" />
+<meta
+  name="description"
+  content="blmayer.dev is my website, here I will share some of my projects and CV."
+/>
+<meta name="keywords" content="developer, CV, programmer, brian" />
 <html>
+  <head>
+    <title>Developer frontpage</title>
+    <style>
+      :root {
+        --color-0: $COLOR0;
+        --color-1: $COLOR1;
+        --color-2: $COLOR2;
+      }
 
-	<head>
-		<title>Developer frontpage</title>
-		<style>
-			:root {
-				--color-0: $COLOR0;
-				--color-1: $COLOR1;
-				--color-2: $COLOR2;
-			}
-		
-			body {
-				background-color: var(--color-0);
-				max-width: 800px;
-				margin: 0 auto;
-				padding: 60px 20px 0 20px;
-				font-family: Courier, monospace;
-				color: var(--color-1);
-			}
-		
-			header {
-				padding: 0 60px;
-			}
-		
-			footer {
-				display: flex;
-				justify-content: space-around;
-			}
-		
-			nav {
-				min-width: 200px;
-				padding-right: 30px;
-			}
-		
-			.row {
-				display: flex;
-			}
-		
-			a {
-				color: var(--color-1);
-			}
-		
-			hr {
-				width: 80%;
-				height: 2px;
-				margin: 40px auto;
-				border-top: 3px dotted var(--color-2);
-				border-right: none;
-				border-bottom: 3px dotted var(--color-2);
-				border-left: none;
-			}
-		
-			.line {
-				width: 100%;
-				border-top: none;
-				border-bottom: 3px dashed var(--color-2);
-			}
-		
-			diff {
-				color: var(--color-2);
-			}
-		</style>
-	</head>
+      body {
+        background-color: var(--color-0);
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 60px 20px 0 20px;
+        font-family: Courier, monospace;
+        color: var(--color-1);
+      }
 
-	<body>
-		<header>
-			<p>arch@blmayer$ cd projects/asciichartr</p>
-			<p>
-				<a href="/index.html">index</a> 
-				<a href="feitaemcasa.html">feita em casa</a> 
-				<a href="deep.html">deep package</a> 
-				<a href="asciichartr.html">asciichartr R port/</a>
-			</p>
-		</header>
-		<hr>
-		<h3><a name="asciichartr">asciichartr</a></h3>
-		<p>asciichartr is a R package that draws a plot on your console using only ascii characters.
-		It is a port of the asciichart npm package, the idea is to be ease and quick to print out a
-		chart of your data. This is the <a href="https://github.com/blmayer/asciichartr">link</a> 
-		to my port's source code.</p>
-	</body>
+      header {
+        padding: 0 60px;
+      }
 
+      footer {
+        display: flex;
+        justify-content: space-around;
+      }
+
+      nav {
+        min-width: 200px;
+        padding-right: 30px;
+      }
+
+      .row {
+        display: flex;
+      }
+
+      a {
+        color: var(--color-1);
+      }
+
+      hr {
+        width: 80%;
+        height: 2px;
+        margin: 40px auto;
+        border-top: 3px dotted var(--color-2);
+        border-right: none;
+        border-bottom: 3px dotted var(--color-2);
+        border-left: none;
+      }
+
+      .line {
+        width: 100%;
+        border-top: none;
+        border-bottom: 3px dashed var(--color-2);
+      }
+
+      diff {
+        color: var(--color-2);
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <p>arch@blmayer$ cd projects/asciichartr</p>
+      <p>
+        <a href="/index.html">index</a>
+        <a href="feitaemcasa.html">feita em casa</a>
+        <a href="deep.html">deep package</a>
+        <a href="asciichartr.html">asciichartr R port/</a>
+      </p>
+    </header>
+    <hr />
+    <h3><a name="asciichartr">asciichartr</a></h3>
+    <p>
+      asciichartr is a R package that draws a plot on your console using only
+      ascii characters. It is a port of the asciichart npm package, the idea is
+      to be ease and quick to print out a chart of your data. This is the
+      <a href="https://github.com/blmayer/asciichartr">link</a> to my port's
+      source code.
+    </p>
+  </body>
 </html>
-
-
