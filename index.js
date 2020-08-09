@@ -1,39 +1,43 @@
 const pages = {
     "feitaemcasa.html": {
         content: `FEITAEMCASAFILE`,
-        mime: "text/html",
+        mime: "text/html"
     },
     "deep.html": {
         content: `DEEPFILE`,
-        mime: "text/html",
+        mime: "text/html"
     },
     "asciichartr.html": {
         content: `ASCIICHARTRFILE`,
-        mime: "text/html",
+        mime: "text/html"
     },
     "404.html": {
         content: `404FILE`,
-        mime: "text/html",
+        mime: "text/html"
     },
     "index.html": {
         content: `INDEXFILE`,
-        mime: "text/html",
+        mime: "text/html"
+    },
+    "awslambdarpc.html": {
+        content: `AWSLAMBDARPCFILE`,
+        mime: "text/html"
     },
     "robots.txt": {
         content: `ROBOTSFILE`,
-        mime: "text/plain",
+        mime: "text/plain"
     },
     "sitemap.xml": {
         content: `SITEMAPFILE`,
-        mime: "application/xml",
-    },
+        mime: "application/xml"
+    }
 };
 
 const morningColours = ["AliceBlue", "DarkSlateBlue", "IndianRed"];
 const dayColours = ["BlanchedAlmond", "Teal", "Salmon"];
 const nightColours = ["#101010", "LawnGreen", "Fuchsia"];
 
-addEventListener("fetch", (event) => {
+addEventListener("fetch", event => {
     event.respondWith(handleRequest(event.request));
 });
 
