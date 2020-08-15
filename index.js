@@ -23,6 +23,10 @@ const pages = {
         content: `AWSLAMBDARPCFILE`,
         mime: "text/html"
     },
+    "htop.html": {
+        content: `HTOPFILE`,
+        mime: "text/html"
+    },
     "robots.txt": {
         content: `ROBOTSFILE`,
         mime: "text/plain"
@@ -55,7 +59,8 @@ async function handleRequest(request) {
     }
 
     // Style content
-    const hour = new Date().getHours();
+    const now = new Date();
+    const hour = now.getHours();
     let colours;
     if (hour > 18 || hour < 5) {
         colours = nightColours;
@@ -68,6 +73,12 @@ async function handleRequest(request) {
     page["content"] = page["content"].replace("$COLOR0", colours[0]);
     page["content"] = page["content"].replace("$COLOR1", colours[1]);
     page["content"] = page["content"].replace("$COLOR2", colours[2]);
+
+    // Special cases
+    if (path === "htop.html") {
+        const age = now - new Date("1992/02/19 14:00:00");
+        page["content"] = page["content"].replace("$UPTIME", age.toString());
+    }
 
     let res = new Response(page["content"]);
     res.headers.set("Content-Type", page["mime"]);
