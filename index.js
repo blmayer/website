@@ -78,13 +78,7 @@ async function handleRequest(request) {
     if (path === "htop.html") {
         const age = (now - new Date("1992/02/19 09:45:00")) / 1000;
         const y = age / (60 * 60 * 24 * 365.25);
-        const m = (y - ~~y) * 12;
-        const d = (m - ~~m) * 30;
-        const H = (d - ~~d) * 12;
-        const M = (H - ~~H) * 60;
-        const S = (M - ~~M) * 60;
-        const up = `${~~y} years, ${~~m} months, ${~~d} ${~~H}:${~~M}:${~~S}`;
-        page["content"] = page["content"].replace("$UPTIME", up);
+        page["content"] = page["content"].replace("$UPTIME", `${~~y} years`);
     }
 
     let res = new Response(page["content"]);
