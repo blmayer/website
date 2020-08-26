@@ -62,7 +62,7 @@ async function handleRequest(request) {
     const now = new Date();
     const hour = now.getHours();
     let colours;
-    if (hour > 18 || hour < 5) {
+    if (hour > 19 || hour < 5) {
         colours = nightColours;
     } else if (hour > 11) {
         colours = dayColours;
