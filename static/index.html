@@ -1,19 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8" />
+        <title>Brian Mayer's frontpage</title>
+
+        <meta charset="UTF-8" />
         <meta name="language" content="english" />
-        <meta
-            name="description"
-            content="blmayer.dev is my website, here I will share some of my projects and CV."
-        />
-        <meta
-            name="keywords"
-            content="developer, CV, programmer, brian, mayer, blmayer"
-        />
+	<meta name="author" content="Brian Lee Mayer">
+        <meta name="description" content="blmayer.dev is my website, find here some of my projects and CV."/>
+        <meta name="keywords" content="developer, CV, programmer, brian, mayer, blmayer"/>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <title>Brian Mayer's frontpage</title>
         <style>
             :root {
                 --color-0: $COLOR0;
@@ -45,6 +41,7 @@
 
             .row {
                 display: flex;
+                justify-content: space-between;
             }
 
             a {
@@ -76,14 +73,14 @@
     <body>
         <header>
             <p>arch@blmayer$ ls -h</p>
-            <p>
-                <a href="/index.html">index/</a>
-                <a href="/htop.html">htop</a>
-                <a href="feitaemcasa.html">feita em casa</a>
-                <a href="deep.html">deep package</a>
-                <a href="asciichartr.html">asciichartr R port</a>
+	    <div class="row">
+                <a href="index.html">index</a>
+                <a href="htop.html">htop</a>
+                <a href="feitaemcasa.html">homemade recipes</a>
+                <a href="deep.html">deep</a>
+                <a href="asciichartr.html">asciichartr</a>
                 <a href="awslambdarpc.html">awslambdarpc</a>
-            </p>
+	    </div>
         </header>
         <hr />
         <div class="row">
@@ -108,6 +105,9 @@
 │   │
 │   ├── summer school
 │   │
+│   ├── nn lecture
+│   ├── nn workshop
+│   │
 │   └── master's thesis
 │
 │
@@ -124,16 +124,16 @@
 └── <a href="#medium">medium post</a>
 
 6 directories
-8 files
-			</pre>
-            </nav>
-            <div>
-                <h2><a id="licentiate">licentiate degree</a></h2>
-                <p>
-                    <diff>@@ -2010-01-01 +2014-01-01 @@</diff><br />
-                    Licentiate degree in Mathematics by Universidade
-                    Presbiteriana Mackenzie.
-                </p>
+10 files
+		</pre>
+	    </nav>
+	    <div>
+		    <h2><a id="licentiate">licentiate degree</a></h2>
+		    <p>
+		    <diff>@@ -2010-01-01 +2014-01-01 @@</diff><br />
+		    Licentiate degree in Mathematics by Universidade
+		    Presbiteriana Mackenzie.
+		    </p>
 
                 <h3>monography</h3>
                 <p>
@@ -193,6 +193,23 @@
                 <h3>wolfram summer school</h3>
                 <p>
                     <diff>@@ project @@</diff> UNICODE OCR with Neural Networks
+                </p>
+
+                <h3>neural networks lecture</h3>
+                <p>
+			<diff>@@ -2016-11-06 +2016-11-06 @@</diff><br/>
+			Gave a lecture about the new, at the time, Wolfram Mathematica
+			neural networks framework features, during the Brazilian Wolfram
+			Conference at Universidade Presbiteriana Mackenzie.
+                </p>
+
+                <h3>neural networks workshop</h3>
+                <p>
+			<diff>@@ -2016-11-20 +2016-11-20 @@</diff><br/>
+			Ministered a workshop about the Wolfram Mathematica neural networks
+			framework features and applications, during the Semana da Computação
+			Natural given by the Natual Computing Laboratory at Universidade
+			Presbiteriana Mackenzie.
                 </p>
 
                 <h3>master's thesis</h3>
@@ -268,6 +285,13 @@
                     <diff>@@ github @@</diff>
                     <a href="https://github.com/blmayer">github.com/blmayer</a>
                 </p>
+		<p>
+		    This work by Brian Mayer is<br/>licensed under <a rel="license" href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>
+		</p>
+		<p>
+	 	    <img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"/>
+		    <img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"/>
+		</p>
             </div>
         </footer>
     </body>

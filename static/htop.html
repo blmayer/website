@@ -1,14 +1,15 @@
-<!DOCTYPE html PUBLIC>
-<meta charset="utf-8" />
-<meta language="english" />
-<meta
-    name="description"
-    content="blmayer.dev is my website, here I will share some of my projects and CV."
-/>
-<meta name="keywords" content="developer, CV, programmer, brian" />
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
-        <title>Developer frontpage</title>
+        <title>Brian Mayer's frontpage</title>
+
+        <meta charset="UTF-8" />
+        <meta name="language" content="english" />
+	<meta name="author" content="Brian Lee Mayer">
+        <meta name="description" content="blmayer.dev is my website, find here some of my projects and CV."/>
+        <meta name="keywords" content="developer, CV, programmer, brian, mayer, blmayer"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
         <style>
             :root {
                 --color-0: $COLOR0;
@@ -45,6 +46,7 @@
 
             .row {
                 display: flex;
+                justify-content: space-between;
             }
 
             a {
@@ -75,14 +77,15 @@
 
     <body>
         <header>
-            <p>arch@blmayer$ htop</p>
-            <p>
-                <a href="/index.html">index</a>
-                <a href="feitaemcasa.html">feita em casa</a>
-                <a href="deep.html">deep package</a>
-                <a href="asciichartr.html">asciichartr R port</a>
+            <p>arch@blmayer$ ./htop</p>
+	    <div class="row">
+                <a href="index.html">index</a>
+                <a href="htop.html">htop</a>
+                <a href="feitaemcasa.html">homemade recipes</a>
+                <a href="deep.html">deep</a>
+                <a href="asciichartr.html">asciichartr</a>
                 <a href="awslambdarpc.html">awslambdarpc</a>
-            </p>
+	    </div>
         </header>
         <hr />
         <htop>
