@@ -1,40 +1,7 @@
-const pages = {
-    "feitaemcasa.html": {
-        content: `FEITAEMCASAFILE`,
-        mime: "text/html"
-    },
-    "deep.html": {
-        content: `DEEPFILE`,
-        mime: "text/html"
-    },
-    "asciichartr.html": {
-        content: `ASCIICHARTRFILE`,
-        mime: "text/html"
-    },
-    "404.html": {
-        content: `404FILE`,
-        mime: "text/html"
-    },
-    "index.html": {
-        content: `INDEXFILE`,
-        mime: "text/html"
-    },
-    "awslambdarpc.html": {
-        content: `AWSLAMBDARPCFILE`,
-        mime: "text/html"
-    },
-    "htop.html": {
-        content: `HTOPFILE`,
-        mime: "text/html"
-    },
-    "robots.txt": {
-        content: `ROBOTSFILE`,
-        mime: "text/plain"
-    },
-    "sitemap.xml": {
-        content: `SITEMAPFILE`,
-        mime: "application/xml"
-    }
+const mimes = {
+    "html": "text/html",
+    "txt": "text/plain",
+    "xml": "application/xml"
 };
 
 const morningColours = ["AliceBlue", "DarkSlateBlue", "IndianRed"];
@@ -46,16 +13,17 @@ addEventListener("fetch", event => {
 });
 
 async function handleRequest(request) {
-    let path = request.url.match("/([A-z.]+)$");
+    let path = request.url.slice(request.url.lastIndexOf("/")+1);
     if (!path) {
         path = "index.html";
-    } else {
-        path = path[1];
     }
 
-    let page = pages[path];
+    let page = await pages.get(path);
+    let status = 200;
     if (!page) {
-        page = pages["404.html"];
+        page = await pages.get("404.html");
+	path = "404.html";
+	status = 404;
     }
 
     // Style content
@@ -70,19 +38,23 @@ async function handleRequest(request) {
         colours = morningColours;
     }
 
-    page["content"] = page["content"].replace("$COLOR0", colours[0]);
-    page["content"] = page["content"].replace("$COLOR1", colours[1]);
-    page["content"] = page["content"].replace("$COLOR2", colours[2]);
+    page = page.replace("$COLOR0", colours[0]);
+    page = page.replace("$COLOR1", colours[1]);
+    page = page.replace("$COLOR2", colours[2]);
 
     // Special cases
     if (path === "htop.html") {
-        const age = (now - new Date("1992/02/19 09:45:00")) / 1000;
+        const age = (now - new Date("1992/02/19 14:00:00")) / 1000;
         const y = age / (60 * 60 * 24 * 365.25);
-        page["content"] = page["content"].replace("$UPTIME", `${~~y} years`);
+        page = page.replace("$UPTIME", `${~~y} years`);
     }
 
-    let res = new Response(page["content"]);
-    res.headers.set("Content-Type", page["mime"]);
+    let res = new Response(page, {"status": status});
+    let mime = mimes[path.split(".")[1]];
+    if (!mime) {
+	mime = mimes["txt"];
+    }
+    res.headers.set("Content-Type", mime);
 
     return res;
 }
