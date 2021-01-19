@@ -7,10 +7,6 @@
 
 It is a two step process:
 
-- To build the worker code run `make` and the webpages are put into the javaScript file *index-loaded.js*.
+- To build the worker code run `make` and the webpages are put into KV.
 - To deploy run `wrangler publish`.
 
-
-### Notes
-
-Each page must have an entry on the makefile and on the *pages* object in *index.js*.
