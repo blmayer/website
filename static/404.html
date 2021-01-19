@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Brian Mayer's frontpage</title>
+
+        <meta charset="UTF-8" />
+        <meta name="language" content="english" />
+	<meta name="author" content="Brian Lee Mayer">
+        <meta name="description" content="blmayer.dev is my website, find here some of my projects and CV."/>
+        <meta name="keywords" content="developer, CV, programmer, brian, mayer, blmayer"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <style>
+            :root {
+                --color-0: $COLOR0;
+                --color-1: $COLOR1;
+                --color-2: $COLOR2;
+            }
+
+            body {
+                background-color: var(--color-0);
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 60px 20px 0 20px;
+                font-family: Courier, monospace;
+                color: var(--color-1);
+            }
+
+            header {
+                padding: 0 60px;
+            }
+
+            footer {
+                display: flex;
+                justify-content: space-around;
+            }
+
+            nav {
+                min-width: 200px;
+                padding-right: 30px;
+            }
+
+            .row {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            a {
+                color: var(--color-1);
+            }
+
+            hr {
+                width: 80%;
+                height: 2px;
+                margin: 40px auto;
+                border-top: 3px dotted var(--color-2);
+                border-right: none;
+                border-bottom: 3px dotted var(--color-2);
+                border-left: none;
+            }
+
+            .line {
+                width: 100%;
+                border-top: none;
+                border-bottom: 3px dashed var(--color-2);
+            }
+
+            diff {
+                color: var(--color-2);
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <p>arch@blmayer$ ls -h</p>
+	    <div class="row">
+                <a href="index.html">index</a>
+                <a href="htop.html">htop</a>
+                <a href="feitaemcasa.html">homemade-recipes</a>
+                <a href="deep.html">deep</a>
+                <a href="asciichartr.html">asciichartr</a>
+                <a href="awslambdarpc.html">awslambdarpc</a>
+	    </div>
+        </header>
+        <hr />
+        <h3>sh: no matches found: *</h3>
+    </body>
+</html>
