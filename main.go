@@ -2,11 +2,25 @@ package main
 
 import (
 	"embed"
+	"html/template"
 	"net/http"
+	"time"
 )
 
-//go:embed static/*
-var pages embed.FS
+type colours struct {
+	bgColour     string
+	bodyColour   string
+	borderColour string
+}
+
+var (
+	morningColours = colours{"AliceBlue", "DarkSlateBlue", "IndianRed"}
+	dayColours     = colours{"BlanchedAlmond", "Teal", "Salmon"}
+	nightColours   = colours{"#101010", "LawnGreen", "Fuchsia"}
+
+	//go:embed static/*
+	pages embed.FS
+)
 
 func main() {
 	http.HandleFunc("/", handler)
@@ -19,18 +33,30 @@ func main() {
 }
 
 func handler(w http.ResponseWriter, r *http.Request) {
-	var content []byte
-	var err error
-	switch r.URL.Path {
-	case "/":
-		content, err = pages.ReadFile("static/index.html")
-	default:
-		content, err = pages.ReadFile("static" + r.URL.Path)
+	path := "static" + r.URL.Path
+	if path == "static/" {
+		path = "static/index.html"
 	}
 
+	hour := time.Now().Hour()
+	colour := morningColours
+	if hour > 20 || hour < 5 {
+		colour = nightColours
+	} else if hour > 11 {
+		colour = dayColours
+	} else {
+		colour = morningColours
+	}
+
+	temp, err := template.ParseFS(pages, "static/*")
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusBadRequest)
 		return
 	}
-	w.Write(content)
+
+	err = temp.ExecuteTemplate(w, path, colour)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusBadRequest)
+		return
+	}
 }
