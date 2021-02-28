@@ -33,8 +33,8 @@ func main() {
 }
 
 func handler(w http.ResponseWriter, r *http.Request) {
-	path := "static" + r.URL.Path
-	if path == "static/" {
+	path := r.URL.Path
+	if path == "/" {
 		path = "index.html"
 	}
 
