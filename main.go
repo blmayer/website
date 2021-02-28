@@ -15,9 +15,9 @@ type colours struct {
 }
 
 var (
-	morningColours = colours{"AliceBlue", "DarkSlateBlue", "IndianRed", ""}
-	dayColours     = colours{"BlanchedAlmond", "Teal", "Salmon", ""}
-	nightColours   = colours{"#101010", "LawnGreen", "Fuchsia", ""}
+	morningColours = colours{"AliceBlue", "DarkSlateBlue", "IndianRed", 0}
+	dayColours     = colours{"BlanchedAlmond", "Teal", "Salmon", 0}
+	nightColours   = colours{"#101010", "LawnGreen", "Fuchsia", 0}
 
 	birth = time.Date(1992, 02, 19, 17, 00, 00, 0, time.UTC)
 
