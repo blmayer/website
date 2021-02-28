@@ -1,6 +1,6 @@
 FROM golang as builder
 
-COPY static .
+COPY static static
 COPY main.go .
 
 RUN go build main.go
