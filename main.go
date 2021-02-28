@@ -36,8 +36,8 @@ func main() {
 }
 
 func handler(w http.ResponseWriter, r *http.Request) {
-	path := r.URL.Path
-	if path == "/" {
+	path := r.URL.Path[1:]
+	if path == "" {
 		path = "index.html"
 	}
 
