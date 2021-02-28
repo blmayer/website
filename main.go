@@ -8,9 +8,9 @@ import (
 )
 
 type colours struct {
-	bgColour     string
-	bodyColour   string
-	borderColour string
+	BgColour     string
+	BodyColour   string
+	BorderColour string
 }
 
 var (
@@ -35,7 +35,7 @@ func main() {
 func handler(w http.ResponseWriter, r *http.Request) {
 	path := "static" + r.URL.Path
 	if path == "static/" {
-		path = "static/index.html"
+		path = "index.html"
 	}
 
 	hour := time.Now().Hour()
