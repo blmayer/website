@@ -1,12 +1,8 @@
 # blmayer.dev
 
-> This is the code to deploy my website on cloudflare
+> This is the code to deploy my website on cloud run
 
 
-## Commands
+## Usage
 
-It is a two step process:
-
-- To build the worker code run `make` and the webpages are put into KV.
-- To deploy run `wrangler publish`.
-
+Git push triggers the build on cloud run.
