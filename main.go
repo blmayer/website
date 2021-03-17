@@ -3,7 +3,9 @@ package main
 import (
 	"embed"
 	"html/template"
+	"mime"
 	"net/http"
+	"strings"
 	"time"
 )
 
@@ -40,6 +42,9 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	if path == "" {
 		path = "index.html"
 	}
+
+	ext := mime.TypeByExtension(path[strings.LastIndex(path, "."):])
+	w.Header()["Content-Type"] = []string{ext}
 
 	now := time.Now()
 	colour := morningColours
