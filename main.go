@@ -2,10 +2,10 @@ package main
 
 import (
 	"embed"
-	"html/template"
 	"mime"
 	"net/http"
 	"strings"
+	"text/template"
 	"time"
 )
 
