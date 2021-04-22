@@ -25,15 +25,22 @@ var (
 
 	//go:embed static/*
 	pages embed.FS
+
+	temp *template.Template
 )
 
 func main() {
+	var err error
+	temp, err = template.ParseFS(pages, "static/*")
+	if err != nil {
+		panic(err)
+	}
+
 	http.HandleFunc("/", handler)
 
-	err := http.ListenAndServe(":8080", nil)
+	err = http.ListenAndServe(":8080", nil)
 	if err != nil {
-		println(err.Error())
-		return
+		panic(err)
 	}
 }
 
@@ -59,15 +66,9 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	years := now.Sub(birth).Hours() / (24 * 365.25)
 	colour.Age = int(years)
 
-	temp, err := template.ParseFS(pages, "static/*")
+	err := temp.ExecuteTemplate(w, path, colour)
 	if err != nil {
-		http.Error(w, err.Error(), http.StatusBadRequest)
-		return
-	}
-
-	err = temp.ExecuteTemplate(w, path, colour)
-	if err != nil {
-		http.Error(w, err.Error(), http.StatusBadRequest)
+		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
 }
