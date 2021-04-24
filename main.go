@@ -68,7 +68,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 
 	err := temp.ExecuteTemplate(w, path, colour)
 	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
+		http.Error(w, err.Error(), http.StatusNotFound)
 		return
 	}
 }
