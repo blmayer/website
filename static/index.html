@@ -1,96 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Brian Mayer's frontpage</title>
-
-        <meta charset="UTF-8" />
-        <meta name="language" content="english" />
-	    <meta name="author" content="Brian Lee Mayer">
-        <meta name="description" content="blmayer.dev is my website, find here some of my projects and CV."/>
-        <meta name="keywords" content="developer, CV, programmer, brian, mayer, blmayer"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-        <style>
-            :root {
-                --color-0: {{.BgColour}};
-                --color-1: {{.BodyColour}};
-                --color-2: {{.BorderColour}};
-            }
-
-            body {
-                background-color: var(--color-0);
-                max-width: 800px;
-                margin: 0 auto;
-                padding: 60px 20px 0 20px;
-                font-family: Courier, monospace;
-                color: var(--color-1);
-	    }
-
-	    body::-webkit-scrollbar {
-		      display: none;
-            }
-
-            header {
-                padding: 0 60px;
-            }
-
-            footer {
-                display: flex;
-                justify-content: space-around;
-            }
-
-            nav {
-                min-width: 200px;
-                padding-right: 30px;
-            }
-
-            .row {
-                display: flex;
-                justify-content: space-between;
-            }
-
-            a {
-                color: var(--color-1);
-            }
-
-            hr {
-                width: 80%;
-                height: 2px;
-                margin: 40px auto;
-                border-top: 3px dotted var(--color-2);
-                border-right: none;
-                border-bottom: 3px dotted var(--color-2);
-                border-left: none;
-            }
-
-            .line {
-                width: 100%;
-                border-top: none;
-                border-bottom: 3px dashed var(--color-2);
-            }
-
-            diff {
-                color: var(--color-2);
-            }
-        </style>
-    </head>
-
+    {{template "head.html" .}}
     <body>
-        <header>
-            <p>arch@blmayer$ ls -h</p>
-	    <div class="row">
-                <a href="index.html">index</a>
-                <a href="htop.html">htop</a>
-                <a href="feitaemcasa.html">homemade-recipes</a>
-                <a href="deep.html">deep</a>
-                <a href="asciichartr.html">asciichartr</a>
-                <a href="awslambdarpc.html">awslambdarpc</a>
-	    </div>
-        </header>
-        <hr />
+        <p>arch@blmayer$ ls -h</p>
+        {{template "header.html"}}
         <div class="row">
             <nav>
-                <pre>
+<pre>
 .
 ├── <a href="#licentiate">licentiate degree/</a>
 │   │
@@ -134,15 +50,15 @@
 
 7 directories
 11 files
-		</pre>
-	    </nav>
-	    <div>
-		    <h2><a id="licentiate">licentiate degree</a></h2>
-		    <p>
-		    <diff>@@ -2010-01-01 +2014-01-01 @@</diff><br />
-		    Licentiate degree in Mathematics by Universidade
-		    Presbiteriana Mackenzie.
-		    </p>
+</pre>
+            </nav>
+            <div>
+                <h2><a id="licentiate">licentiate degree</a></h2>
+                <p>
+                    <diff>@@ -2010-01-01 +2014-01-01 @@</diff><br />
+                    Licentiate degree in Mathematics by Universidade
+                    Presbiteriana Mackenzie.
+                </p>
 
                 <h3>monography</h3>
                 <p>
@@ -181,9 +97,9 @@
                 </p>
                 <p>
                     <diff>@@ DOI @@</diff>
-		    <a href="http://dx.doi.org/10.5540/03.2016.004.01.0007">
-			    http://dx.doi.org/10.5540/03.2016.004.01.0007
-		    </a>
+                    <a href="http://dx.doi.org/10.5540/03.2016.004.01.0007">
+                        http://dx.doi.org/10.5540/03.2016.004.01.0007
+                    </a>
                 </p>
 
                 <h3>article</h3>
@@ -198,9 +114,9 @@
                 </p>
                 <p>
                     <diff>@@ DOI @@</diff>
-		    <a href="https://www.hindawi.com/journals/cin/2018/6858176/">
+		            <a href="https://www.hindawi.com/journals/cin/2018/6858176/">
                         https://www.hindawi.com/journals/cin/2018/6858176/
-		    </a>
+		            </a>
                 </p>
 
                 <h3>wolfram summer school</h3>
@@ -210,19 +126,19 @@
 
                 <h3>neural networks lecture</h3>
                 <p>
-			<diff>@@ -2016-11-06 +2016-11-06 @@</diff><br/>
-			Gave a lecture about the new, at the time, Wolfram Mathematica
-			neural networks framework features, during the Brazilian Wolfram
-			Conference at Universidade Presbiteriana Mackenzie.
+                    <diff>@@ -2016-11-06 +2016-11-06 @@</diff><br/>
+                    Gave a lecture about the new, at the time, Wolfram Mathematica
+                    neural networks framework features, during the Brazilian Wolfram
+                    Conference at Universidade Presbiteriana Mackenzie.
                 </p>
 
                 <h3>neural networks workshop</h3>
                 <p>
-			<diff>@@ -2016-11-20 +2016-11-20 @@</diff><br/>
-			Ministered a workshop about the Wolfram Mathematica neural networks
-			framework features and applications, during the Semana da Computação
-			Natural given by the Natural Computing Laboratory at Universidade
-			Presbiteriana Mackenzie.
+                    <diff>@@ -2016-11-20 +2016-11-20 @@</diff><br/>
+                    Ministered a workshop about the Wolfram Mathematica neural networks
+                    framework features and applications, during the Semana da Computação
+                    Natural given by the Natural Computing Laboratory at Universidade
+                    Presbiteriana Mackenzie.
                 </p>
 
                 <h3>master's thesis</h3>
@@ -251,7 +167,7 @@
                     micro-services, android app, intranet and data routines.
                 </p>
                 <p>
-                    Micro-services where writen in Golang and deployed as
+                    Micro-services where written in Golang and deployed as
                     lambda functions using cloud formation, and data routines
                     in Python, using MySQL and MongoDB as data bases.
                 </p>
@@ -277,23 +193,23 @@
                     functions locally<br />
                     <diff>@@ link @@</diff>
                     <a href="https://medium.com/nagoya-foundation/running-and-debugging-go-lambda-functions-locally-156893e4ed0d">
-			    Medium post
-		    </a>
+			            Medium post
+		            </a>
                 </p>
 
                 <h3>article</h3>
                 <p>
                     <diff>@@ title @@</diff> A Numerical Study on the Regularity of d-Primes
-		    via Informational Entropy and Visibility Algorithms
+		            via Informational Entropy and Visibility Algorithms
                 </p>
                 <p>
                     <diff>@@ journal @@</diff> Complexity
                 </p>
                 <p>
                     <diff>@@ DOI @@</diff>
-		    <a href="https://www.hindawi.com/journals/complexity/2020/1480890/">
-		        https://www.hindawi.com/journals/complexity/2020/1480890/
-		    </a>
+                    <a href="https://www.hindawi.com/journals/complexity/2020/1480890/">
+                        https://www.hindawi.com/journals/complexity/2020/1480890/
+                    </a>
                 </p>
 
                 <h2><a id="tradersclub">tradersclub</a></h2>
@@ -303,7 +219,6 @@
                     developing the payment micro-service and working on
                     projects like Hubspot and service invoices integrations.
                 </p>
-
             </div>
         </div>
         <hr class="line" />
@@ -318,8 +233,7 @@
             (__)\       )\/\
                 ||----w |
                 ||     ||
-		</pre
-            >
+		</pre>
             <div>
                 <p>
                     <diff>@@ email @@</diff>
@@ -329,17 +243,17 @@
                     <diff>@@ github @@</diff>
                     <a href="https://github.com/blmayer">github.com/blmayer</a>
                 </p>
-		<p>
+		        <p>
                     <diff>@@ buy me a coffee @@</diff>
                     <a href="https://ko-fi.com/blmayer">ko-fi.com/blmayer</a>
                 </p>
-		<p>
-		    This work by Brian Mayer is<br/>licensed under <a rel="license" href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>
-		</p>
-		<p>
-	 	    <img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"/>
-		    <img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"/>
-		</p>
+                <p>
+                    This work by Brian Mayer is<br/>licensed under <a rel="license" href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>
+                </p>
+                <p>
+                    <img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"/>
+                    <img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"/>
+                </p>
             </div>
         </footer>
     </body>

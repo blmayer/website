@@ -1,113 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Brian Mayer's frontpage</title>
-
-        <meta charset="UTF-8" />
-        <meta name="language" content="english" />
-	<meta name="author" content="Brian Lee Mayer">
-        <meta name="description" content="blmayer.dev is my website, find here some of my projects and CV."/>
-        <meta name="keywords" content="developer, CV, programmer, brian, mayer, blmayer"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-        <style>
-            :root {
-                --color-0: {{.BgColour}};
-                --color-1: {{.BodyColour}};
-                --color-2: {{.BorderColour}};
-            }
-
-            body {
-                background-color: var(--color-0);
-                max-width: 800px;
-                margin: 0 auto;
-                padding: 60px 20px 0 20px;
-                font-family: Courier, monospace;
-                color: var(--color-1);
-            }
-
-            header {
-                padding: 0 60px;
-            }
-
-            footer {
-                display: flex;
-                justify-content: space-around;
-            }
-
-            nav {
-                min-width: 200px;
-                padding-right: 30px;
-            }
-
-            .row {
-                display: flex;
-                justify-content: space-between;
-            }
-
-            a {
-                color: var(--color-1);
-            }
-
-            hr {
-                width: 80%;
-                height: 2px;
-                margin: 40px auto;
-                border-top: 3px dotted var(--color-2);
-                border-right: none;
-                border-bottom: 3px dotted var(--color-2);
-                border-left: none;
-            }
-
-            .line {
-                width: 100%;
-                border-top: none;
-                border-bottom: 3px dashed var(--color-2);
-            }
-
-            diff {
-                color: var(--color-2);
-            }
-        </style>
-    </head>
-
+    {{template "head.html" .}}
     <body>
-        <header>
-            <p>arch@blmayer$ cd projects/homemade-recipes</p>
-	    <div class="row">
-                <a href="index.html">index</a>
-                <a href="htop.html">htop</a>
-                <a href="feitaemcasa.html">homemade-recipes</a>
-                <a href="deep.html">deep</a>
-                <a href="asciichartr.html">asciichartr</a>
-                <a href="awslambdarpc.html">awslambdarpc</a>
-	    </div>
-        </header>
-        <hr />
+        <p>arch@blmayer$ cd projects/homemade-recipes</p>
+        {{template "header.html"}}
         <h3><a name="app">homemade recipes</a></h3>
         <p>
-            Homemade Recipes or Feita em casa is an Android app published on the
-	    Google Play Store, it features an intelligent search of recipes by
-	    ingredient. The ideia is to help people use the ingredients they have
-	    at home, not the opposite, as it is commonly seen, so people can cook
-	    without leaving home to buy food.
+            Homemade Recipes or Feita em casa is a project I started for two
+            reasons: for study and to try to help with the COVID-19 quarantine.
+            The study part allowed me to practice my coding skills in Golang,
+            Flutter and web and try new technologies like Cloud build, templates
+            and server side rendering. The idea is to help people use the
+            ingredients they have at home, thus not leaving home, and being
+            more efficient at home. Also, searching recipes by ingredients
+            instead of name is quite the opposite way of doing it, which I
+            think is amusing. This way people can cook more without leaving
+            home to buy food.
         </p>
-
         <p>
-            Currently it is available on 11 countries, those with portuguese
-            or english languages. Recipes are different depending on the
-            language. Also, there is a web version of the app 
-	    <a href="https://feitaemcasa.com">here</a>.
+            The project turned out be an app, distributed for Android and iOS
+            on the respective app stores. I developed a web version too, and
+            can be accessed on the link below.
         </p>
-	<p>
-	<a href='https://play.google.com/store/apps/details?id=br.com.feitaemcasa&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'>
-	    <img width="160px" alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png'/>
-	</a>
-	</p>
-	<p>
-	<a href="https://apps.apple.com/us/app/feita-em-casa/id1529540506?mt=8">
-	    <img style="margin:0 10px" width="140px" alt="Get it on App Store" src="https://linkmaker.itunes.apple.com/en-us/badge-lrg.svg?releaseDate=2020-08-28&kind=iossoftware&bubble=ios_apps"/>
-	</a>
-	</p>
+        <p><a href="https://feitaemcasa.com">Web version</a></p>
+        <p>
+            The apps are currently available on 11 countries, those with 
+            portuguese or english languages. Recipes are different depending
+            on the language you choose. On the web version you can access
+            anywhere, and can choose the language by clicking on the flag in
+            the top right corner. I plan to add more languages in the future.
+            Below you find the links to the apps.
+        </p>
+        <p>
+            <a href='https://play.google.com/store/apps/details?id=br.com.feitaemcasa'>
+                <img width="160px" alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png'/>
+            </a>
+        </p>
+        <p>
+            <a href="https://apps.apple.com/us/app/feita-em-casa/id1529540506?mt=8">
+                <img style="margin:0 10px" width="140px" alt="Get it on App Store" src="https://linkmaker.itunes.apple.com/en-us/badge-lrg.svg?releaseDate=2020-08-28&kind=iossoftware&bubble=ios_apps"/>
+            </a>
+        </p>
     </body>
 </html>
