@@ -14,7 +14,16 @@
                 }
                 html {
                         background-color: var(--color-0);
+                        -ms-overflow-style: none;
+                        scrollbar-width: none;
                 }
+
+                /* Hide scrollbar for Chrome, Safari and Opera */
+                html::-webkit-scrollbar {
+                        display: none;
+                }
+                
+
                 body {
                         max-width: 800px;
                         margin: 0 auto;
