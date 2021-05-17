@@ -55,7 +55,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 
 	now := time.Now()
 	colour := morningColours
-	if now.Hour() > 20 || now.Hour() < 5 {
+	if now.Hour() > 18 || now.Hour() < 5 {
 		colour = nightColours
 	} else if now.Hour() > 11 {
 		colour = dayColours
