@@ -2,8 +2,7 @@
 <html lang="en">
     {{template "head.html" .}}
     <body>
-        <p>arch@blmayer$ ls -h</p>
-        {{template "header.html"}}
+        {{template "header.html" "arch@blmayer$ ls -h"}}
         <div class="row">
             <nav>
 <pre>
@@ -253,7 +252,7 @@
             (__)\       )\/\
                 ||----w |
                 ||     ||
-		</pre>
+            </pre>
             <div>
                 <p>
                     <diff>@@ email @@</diff>
@@ -270,10 +269,6 @@
                 <p>
                     This work by Brian Mayer is licensed<br/>under
                     <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>
-                </p>
-                <p>
-                    <img height="22px" alt="cc" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg"/>
-                    <img height="22px" alt="by" src="https://mirrors.creativecommons.org/presskit/icons/by.svg"/>
                 </p>
             </div>
         </footer>
