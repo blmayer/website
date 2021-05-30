@@ -7,17 +7,12 @@
         <meta name="keywords" content="developer, CV, programmer, brian, mayer, blmayer"/>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <style>
-                :root {
-                        --color-0: {{.BgColour}};
-                        --color-1: {{.BodyColour}};
-                        --color-2: {{.BorderColour}};
-                }
                 html {
-                        background-color: var(--color-0);
+                        background-color: BlanchedAlmond;
+                        color: Teal;
                         -ms-overflow-style: none;
                         scrollbar-width: none;
                 }
-
                 /* Hide scrollbar for Chrome, Safari and Opera */
                 html::-webkit-scrollbar {
                         display: none;
@@ -27,7 +22,6 @@
                         margin: 0 auto;
                         padding: 40px 20px 0 20px;
                         font-family: Courier, monospace;
-                        color: var(--color-1);
                 }
                 footer {
                         display: flex;
@@ -44,21 +38,21 @@
                         margin-top: 30px;
                 }
                 a {
-                        color: var(--color-1);
+                        color: Teal;
                 }
                 hr {
                         width: 80%;
                         height: 2px;
                         margin: 40px auto 20px auto;
-                        border-top: 3px dotted var(--color-2);
+                        border-top: 3px dotted Salmon;
                         border-right: none;
-                        border-bottom: 3px dotted var(--color-2);
+                        border-bottom: 3px dotted Salmon;
                         border-left: none;
                 }
                 .line {
                         width: 100%;
                         border-top: none;
-                        border-bottom: 3px dashed var(--color-2);
+                        border-bottom: 3px dashed Salmon;
                 }
                 htop {
                         font-size: larger;
@@ -66,7 +60,26 @@
                         justify-content: center;
                 }
                 diff {
-                        color: var(--color-2);
+                        color: Salmon;
+                }
+                @media (prefers-color-scheme: dark) {
+                        html {
+                                background-color: #201e29;
+                                color: LawnGreen;
+                        }
+                        a {
+                                color: LawnGreen;
+                        }
+                        hr {
+                                border-top: 3px dotted Fuchsia;       
+                                border-bottom: 3px dotted Fuchsia;
+                        }
+                        .line {
+                                border-bottom: 3px dashed Fuchsia;
+                        }
+                        diff {
+                                color: Fuchsia;
+                        }
                 }
         </style>
 </head>

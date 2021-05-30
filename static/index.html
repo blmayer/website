@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-    {{template "head.html" .}}
+    `cat head.html`
     <body>
-        {{template "header.html" "arch@blmayer$ ls -h"}}
+        `cat header.html`
         <div class="row">
             <nav>
 <pre>
@@ -106,7 +106,6 @@
                     <diff>@@ title @@</diff> On Synchronizing Coupled
                     Retinogeniculocortical Pathways: A Toy Model
                 </p>
-
                 <p>
                     <diff>@@ journal @@</diff> Computational Intelligence and
                     Neuroscience
@@ -156,20 +155,20 @@
                     scientist period I stayed very close to many clients, 
                     acting like project manager for some cases.
                 </p>
-		<p>Some projects worth mentioning are:</p>
-	        <diff>Developer docker image ++++</diff>
-	        <dd>
-	            Built a docker image with RStudio and all configs/assets
-	            needed for devs, the intention was to provide a uniform
-	            and complete environment for developers.
-	        </dd>
+                <p>Some projects worth mentioning are:</p>
+                <diff>Developer docker image ++++</diff>
+                <dd>
+                    Built a docker image with RStudio and all configs/assets
+                    needed for devs, the intention was to provide a uniform
+                    and complete environment for developers.
+                </dd>
 
-	        <diff>ODBC Support +++++++++</diff>
-	        <dd>
-	            This project installed drivers and made all integrations
-	            on the platform so the clients could use ODBC databases
-	            seamlesly.
-	        </dd>
+                <diff>ODBC Support +++++++++</diff>
+                <dd>
+                    This project installed drivers and made all integrations
+                    on the platform so the clients could use ODBC databases
+                    seamlesly.
+                </dd>
 
                 <h2 id="poupachef">poupachef</h2>
                 <p>
@@ -184,12 +183,12 @@
                     lambda functions using cloud formation, and data routines
                     in Python, using MySQL and MongoDB as data bases.
                 </p>
-		<p>
-		    The cloud was a hibrid of AWS/GCP, with back-end services
-		    in AWS and data routine/MySQL on GCP. The Android app had
-		    its first version in Kotlin, then it was converted to React
-		    Native.
-		</p>
+                <p>
+                    The cloud was a hibrid of AWS/GCP, with back-end services
+                    in AWS and data routine/MySQL on GCP. The Android app had
+                    its first version in Kotlin, then it was converted to React
+                    Native.
+                </p>
 
                 <h2 id="phd">phd</h2>
                 <p>
@@ -241,36 +240,6 @@
             </div>
         </div>
         <hr class="line" />
-        <footer>
-            <pre>
- ______________________________________
-/ Wasting time is an important part of \
-\ living.                              /
- --------------------------------------
-        \   ^__^
-         \  (oo)\_______
-            (__)\       )\/\
-                ||----w |
-                ||     ||
-            </pre>
-            <div>
-                <p>
-                    <diff>@@ email @@</diff>
-                    <a href="mailto:bleemayer@gmail.com">bleemayer@gmail.com</a>
-                </p>
-                <p>
-                    <diff>@@ github @@</diff>
-                    <a href="https://github.com/blmayer">github.com/blmayer</a>
-                </p>
-		        <p>
-                    <diff>@@ buy me a coffee @@</diff>
-                    <a href="https://ko-fi.com/blmayer">ko-fi.com/blmayer</a>
-                </p>
-                <p>
-                    This work by Brian Mayer is licensed<br/>under
-                    <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>
-                </p>
-            </div>
-        </footer>
+        `cat footer.html`
     </body>
 </html>
