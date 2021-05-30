@@ -1,0 +1,16 @@
+FROM gcc as builder
+
+RUN git clone https://github.com/blmayer/servrian.git && \
+        cd servrian && \
+        make release
+
+COPY . /
+
+RUN ./build.sh
+
+FROM scratch
+
+COPY --from=builder /servrian/bin/servrian /servrian
+COPY --from=builder /web /web
+
+CMD ["./servrian"]
