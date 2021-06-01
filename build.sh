@@ -7,7 +7,6 @@ function process_file() {
                 echo "$file"
                 if [[ -d $file ]]
                 then
-                        echo "is dir"
                         [ -d $CWD/web/$file ] || mkdir $CWD/web/$file
                         process_file $file/*
                 else 

@@ -1,6 +1,7 @@
 FROM gcc as builder
 
-RUN git clone https://github.com/blmayer/servrian.git && \
+RUN apt update && apt install -y tree cowsay fortune && \
+        git clone https://github.com/blmayer/servrian.git && \
         cd servrian && \
         make release
 
