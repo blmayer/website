@@ -1,5 +1,9 @@
 #!/bin/bash
 CWD=$(pwd)
+function import() {
+        echo -e "cat <<END_OF_TEXT\n$(cat $@)\nEND_OF_TEXT" | bash
+}
+export -f import
 
 function process_file() {
         for file in $@
@@ -10,8 +14,7 @@ function process_file() {
                         [ -d $CWD/web/$file ] || mkdir $CWD/web/$file
                         process_file $file/*
                 else 
-                        fi=$(basename $file)
-                        echo -e "cat <<END_OF_TEXT\n$(cat $file)\nEND_OF_TEXT" | bash > $CWD/web/$file
+                        import $file > $CWD/web/$file
                 fi
         done
 }
