@@ -6,12 +6,11 @@
     <p><strong>blmayer@computer ~$ </strong>cd projects</p>
     `cat header.html`
 
-    <p><strong>blmayer@computer ~/projects$ </strong>ls -lh .</p>
-    <pre>
-`ls -lh projects`
-    </pre>
     <h2>Projects</h2>
-    `import projects/*`
+    <p><strong>blmayer@computer ~/projects$ </strong>ls -lh | sed -E 's@(\S+)$@<a href="\1">\1</a>@'</p>
+    <pre>
+`ls -lh projects | sed -E 's@(\S+)$@<a href="\1">\1</a>@'`
+    </pre>
 </body>
 
 </html>
