@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+`cat head.html`
+
+<body>
+    <p><strong>blmayer@computer ~$ </strong>cd works</p>
+    `cat header.html`
+
+    <h2>works</h2>
+    <p><strong>blmayer@computer ~/works$ </strong>ls -lh | sed -E 's@(\S+)$@<a href="works/\1">\1</a>@'</p>
+    <pre>
+`ls -lh works | sed -E 's@(\S+)$@<a href="works/\1">\1</a>@'`
+    </pre>
+</body>
+
+</html>
