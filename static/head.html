@@ -22,7 +22,7 @@
                 body {
                         max-width: 800px;
                         margin: 0 auto;
-                        padding: 40px 20px 0 20px;
+                        padding: 1em;
                         font-family: Courier, monospace;
                 }
 
@@ -30,6 +30,7 @@
                         display: flex;
                         justify-content: space-around;
                         align-items: center;
+                        flex-wrap: wrap;
                 }
 
                 nav {
@@ -74,6 +75,14 @@
 
                 diff {
                         color: Salmon;
+                }
+
+                ul li {
+                        list-style: none;
+                }
+
+                li::before {
+                        content: "- ";
                 }
 
                 @media (prefers-color-scheme: dark) {
