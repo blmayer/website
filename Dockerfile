@@ -7,7 +7,7 @@ RUN apt update && apt install -y tree cowsay fortune && \
 
 COPY . /
 
-RUN PATH="$PATH:/usr/games" ./build.sh
+RUN PATH="$PATH:/usr/games" ./build.sh static
 
 FROM scratch
 
