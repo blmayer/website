@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-`cat head.html`
+{{static/head.html}}
 
 <body>
     <p><strong>blmayer@computer ~$ </strong>cd ~</p>
-    `cat header.html`
+    {{static/header.html}}
 
     <h2>Hello World!</h2>
     <p>Welcome to my portfolio website. Thank you for taking your time.</p>
@@ -30,12 +30,12 @@
     <br>
 
     <h2>Contents</h2>
-    <p><strong>blmayer@computer ~$ </strong>tree -H "." . | tail -n +32 | head -n -14</p>
-    `tree -H "." . | tail -n +32 | head -n -14`
+    <p><strong>blmayer@computer ~$ </strong>tree -H "." static | tail -n +32 | head -n -14</p>
+    {{! tree -H "." static | tail -n +32 | head -n -14}}
 
     <hr class="line" />
     <p><strong>blmayer@computer ~$ </strong>cat footer.html</p>
-    `cat footer.html`
+    {{static/footer.html}}
 </body>
 
 </html>

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-`cat head.html`
+{{static/head.html}}
 
 <body>
-    `cat header.html`
+    {{static/header.html}}
     <h3><a name="deep">deep</a></h3>
     <p>
         deep is a R package for building deep neural networks I developed

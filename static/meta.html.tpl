@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-`cat head.html`
+{{static/head.html}}
 
 <body>
     <p><strong>blmayer@computer ~$ </strong></p>
-    `cat header.html`
+    {{static/header.html}}
     <h2>About this site</h2>
     <p>
         This website is generated using some thicks I find interesting,
@@ -30,7 +30,7 @@
 
     <p><strong>blmayer@computer ~$ </strong>fortune | cowsay -W 30</p>
     <pre>
-`fortune | cowsay -W 30`
+{{!fortune | cowsay -W 30}}
     </pre>
 </body>
 

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-`cat head.html`
+{{static/head.html}}
 
 <body>
     <p><strong>blmayer@computer ~$ </strong></p>
-    `cat header.html`
+    {{static/header.html}}
 
     <p><strong>blmayer@computer ~$ </strong>htop</p>
     <htop>
