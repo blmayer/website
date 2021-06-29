@@ -1,24 +1,30 @@
 #!/bin/bash
-CWD=$(pwd)
-function import() {
-        echo -e "cat <<END_OF_TEXT\n$(cat $@)\nEND_OF_TEXT" | bash
-}
-export -f import
 
-function process_file() {
-        for file in $@
+template() {
+    for file in "$@"
+    do
+        [[ "$file" =~ .+\.tpl ]] || { cat "$file"; continue; }
+        while IFS=  read line
         do
-                echo "$file"
-                if [[ -d $file ]]
-                then
-                        [ -d $CWD/web/$file ] || mkdir $CWD/web/$file
-                        process_file $file/*
-                else 
-                        import $file > $CWD/web/$file
-                fi
-        done
+            if grep -q '{{!' <<< "$line"
+            then
+                # replace {{!}} commands
+                sed 's:\s*{{\!\s*\(.*\)\s*}}:\1:g' <<< "$line" | bash
+            elif grep -q '{{' <<< "$line"
+            then
+                # replace files in {{}}
+                template $(sed 's:\s*{{\s*\(.*\)\s*}}:\1:g' <<< "$line")
+            else
+                printf "%s\n" "$line"
+            fi
+        done < "$file"
+    done
 }
 
-[ -e web/ ] || mkdir web
-cd static/
-process_file *
+[[ -d out ]] || mkdir out
+
+find "$@" -type f | while read -r tpl; do
+    echo "$tpl"
+    mkdir -p $(dirname out/$tpl)
+    template "$tpl" > "out/${tpl%.tpl}"
+done
