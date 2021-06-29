@@ -4,7 +4,7 @@ template() {
     for file in "$@"
     do
         [[ "$file" =~ .+\.tpl ]] || { cat "$file"; continue; }
-        while IFS=  read line
+        while IFS=  read -r line
         do
             if grep -q '{{!' <<< "$line"
             then
