@@ -31,7 +31,7 @@
 
     <h2>Contents</h2>
     <p>
-        <strong>blmayer@computer ~$ </strong>
+        <strong>blmayer@~ $ </strong>
         tree -H "." static | tail -n +32 | head -n -14 | sed 's/.tpl//g'
     </p>
     {{! tree -H "." static | tail -n +32 | head -n -14 | sed 's/.tpl//g'}}
