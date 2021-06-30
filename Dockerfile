@@ -12,6 +12,6 @@ RUN PATH="$PATH:/usr/games" ./build.sh static
 FROM scratch
 
 COPY --from=builder /servrian/bin/servrian /servrian
-COPY --from=builder /out /web
+COPY --from=builder /out/static /web
 
 CMD ["./servrian"]
