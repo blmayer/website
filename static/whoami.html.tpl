@@ -3,10 +3,10 @@
 {{static/head.html}}
 
 <body>
-    <p><strong>blmayer@computer ~$ </strong></p>
+    <p><strong>blmayer@~ $ </strong>cat whoami</p>
     {{static/header.html}}
 
-    <p><strong>blmayer@computer ~$ </strong>htop</p>
+    <p><strong>blmayer@~ $ </strong>htop</p>
     <htop>
         <pre class="diff">
 Golang      [||||||||||||||       66%]

@@ -3,7 +3,7 @@
 {{static/head.html}}
 
 <body>
-    <p><strong>blmayer@computer ~$ </strong>cd works</p>
+    <p><strong>blmayer@~ $ </strong>cd works</p>
     {{static/header.html}}
 
     <h2>WIP</h2>
@@ -19,9 +19,12 @@
     </ul>
 
     <h2>works</h2>
-    <p><strong>blmayer@computer ~/works$ </strong>ls -sh1 | sed -E 's@(\S+)$@<a href="works/\1">\1</a>@'</p>
+    <p>
+        <strong>blmayer@~/works $ </strong>
+        ls -sh1 | sed -e 's/.tpl//g' -e 's@\(\S\+\)$@<a href="works/\1">\1</a>@'
+    </p>
     <pre>
-{{!ls -sh1 static/works | sed -E 's@(\S+)$@<a href="works/\1">\1</a>@'}}
+{{!ls -sh1 static/works | sed -e 's/.tpl//g' -e 's@\(\S\+\)$@<a href="works/\1">\1</a>@'}}
     </pre>
 </body>
 

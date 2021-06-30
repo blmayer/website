@@ -3,7 +3,7 @@
 {{static/head.html}}
 
 <body>
-    <p><strong>blmayer@computer ~$ </strong></p>
+    <p><strong>blmayer@~ $ </strong>cat meta</p>
     {{static/header.html}}
     <h2>About this site</h2>
     <p>
@@ -28,7 +28,7 @@
 
     <p>Here's an example:</p>
 
-    <p><strong>blmayer@computer ~$ </strong>fortune | cowsay -W 30</p>
+    <p><strong>blmayer@~ $ </strong>fortune | cowsay -W 30</p>
     <pre>
 {{!fortune | cowsay -W 30}}
     </pre>

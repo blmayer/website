@@ -3,7 +3,7 @@
 {{static/head.html}}
 
 <body>
-    <p><strong>blmayer@computer ~$ </strong>cd ~</p>
+    <p><strong>blmayer@~ $ </strong>ls </p>
     {{static/header.html}}
 
     <h2>Hello World!</h2>
@@ -30,11 +30,14 @@
     <br>
 
     <h2>Contents</h2>
-    <p><strong>blmayer@computer ~$ </strong>tree -H "." static | tail -n +32 | head -n -14</p>
-    {{! tree -H "." static | tail -n +32 | head -n -14}}
+    <p>
+        <strong>blmayer@computer ~$ </strong>
+        tree -H "." static | tail -n +32 | head -n -14 | sed 's/.tpl//g'
+    </p>
+    {{! tree -H "." static | tail -n +32 | head -n -14 | sed 's/.tpl//g'}}
 
     <hr class="line" />
-    <p><strong>blmayer@computer ~$ </strong>cat footer.html</p>
+    <p><strong>blmayer@~ $ </strong>cat footer.html</p>
     {{static/footer.html}}
 </body>
 
