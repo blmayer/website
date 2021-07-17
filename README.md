@@ -5,8 +5,9 @@
 
 ## Usage
 
-Install [template.sh](template.sh), run `template static/` and the resulting
-pages will be inside *out/static*. Git push triggers the build on cloud run.
+Install [template.sh](github.com/blmayer/template.sh), run `template static/`
+and the resulting pages will be inside *out/static*. Git push triggers the
+build on cloud run.
 
 ## Meta
 
